@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Remix</title>
+    {% endif %}    
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    {% block title %}
+
+    {% endblock %}
+    <!--Custom style sheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='baseform.css')}}">
+</head>
+<body>
+    <main id="login">
+        <div class="img">
+            <img src="{{ url_for('static', filename='/images/remixphone.svg')}}" alt="phone" id="phone">
+        </div>
+        <div class="form">
+            {% block form %}
+            {% endblock %}
+        </div>
+
+    </main>
+    
+</body>
+</html>

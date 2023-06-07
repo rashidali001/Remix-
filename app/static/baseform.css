@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+}
+main#login{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+div.img, div.form{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+div.form{
+    padding: 20px;
+}
+div.img > img{
+    display: flex;
+    flex-direction: column;
+}
+div.img > img{
+    width: 100%;
+    height: auto;
+}
+@media (min-width:600px){
+    main#login{
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    div.img, div.form{
+        width: 50%;
+        height: 100%;
+        overflow: auto;
+    }
+    div.img{
+
+        background-image: url('./images/remixphone.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    div.form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.img > img{
+        display: none;
+    }
+}
+
+/** Form styles */
+

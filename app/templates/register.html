@@ -1,0 +1,61 @@
+{% extends "baseform.html" %}
+
+{% block title %}
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css')}}">
+{% endblock %}
+
+{% block form %}
+<h1>Join our community today</h1>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<p style="color: red;">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="" method="post" autocomplete="off" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.fullname(class="form-content", placeholder="Fullname ...")}} <br>
+        {% for error in form.fullname.errors %}
+        <span style="color:red"> {{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.username(class="form-content", placeholder="Username ...")}} <br>
+        {% for error in form.username.errors %}
+        <span style="color:red"> {{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.email(class="form-content", placeholder="Email ...")}} <br>
+        {% for error in form.email.errors %}
+        <span style="color:red"> {{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.phone_no(class="form-content", placeholder="Phone No ...")}} <br>
+        {% for error in form.phone_no.errors %}
+        <span style="color:red"> {{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password(class="form-content", placeholder="Password ...")}} <br>
+        {% for error in form.password.errors %}
+        <span style="color:red"> {{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.repeat_password(class="form-content", placeholder="Repeat Password ...")}} <br>
+        {% for error in form.repeat_password.errors %}
+        <span style="color:red"> {{ error }}</span>
+        {% endfor %}
+    </p>
+    <p class="submit-container">
+        {{ form.submit(class="submit") }}
+    </p>
+</form>
+<p class="register">Already a User?<a href="{{ url_for('login')}}">Login here</a> </p>
+<p style="margin-top: 5px;"><a href="{{url_for('index') }}">Back to homepage</a></p>
+{% endblock %}
+

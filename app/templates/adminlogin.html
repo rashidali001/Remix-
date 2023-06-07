@@ -1,0 +1,36 @@
+{% extends "baseform.html" %}
+
+{% block title %}
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css')}}">
+{% endblock %}
+
+{% block form %}
+<h1>Admin Portal</h1>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<p style="color: red;">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="" method="post" autocomplete="off" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.id_no(class="form-content", placeholder="ID No ...")}}
+        {% for error in form.id_no.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password(class="form-content", placeholder="Password ...")}}
+        {% for error in form.password.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p class="submit-container">
+        {{ form.submit(class="submit") }}
+    </p>
+</form>
+<p style="margin-top: 5px;"><a href="{{url_for('index') }}">Back to homepage</a></p>
+{% endblock %}
+

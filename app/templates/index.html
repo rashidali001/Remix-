@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Remix</title>
+    {% endif %}    
+    <!--Linking custom css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="intro">
+        <div class="width">
+        <nav>
+            <img src="{{ url_for('static', filename='/images/remix.png')}}" alt="logo" id="logo">
+            <div class="links">
+                <a href="{{ url_for('admin') }}" id="login">Admin</a>
+                <a href="{{ url_for('login') }}" id="login">Login</a>
+                <a href="{{ url_for('register' )}}" id="signup">Sign Up</a>
+            </div>            
+        </nav>
+        <h1>Shop Smart, Save Big!</h1>
+        <p>Taking your shopping experience to the next level</p>
+
+        <div class="more_links">
+            <a href="{{ url_for('register') }}" class="free">Join now</a>
+            <a href="#" aria-disabled="true">learn more</a>
+        </div>
+        </div>
+    </div>
+
+    <!-- End of Intro-->
+    <h1 class="title">Now Introducing...</h1>
+    <section class="info">        
+        <section class="info-section">
+            <h3>A loyalty Program</h3>
+            <p>
+                As a valued customer, we believe you deserve more than just great products
+                and top-notch service. That's why we've created a program that 
+                rewards you for your loyalty and makes shopping with us even more exciting. 
+                With our loyalty program, you'll earn points every time you shop that can be 
+                redeemed for exclusive discounts, free shipping, and even early access to new 
+                products. 
+            </p>
+            <h3 style="margin-top: 15px;">Special Promotions & sales</h3>
+            <p>
+                Plus, as a member, you'll have access to special promotions and sales 
+                that are reserved just for you. It's our way of saying "thank you" for 
+                choosing us as your go-to shopping destination.
+                 So don't wait any longer – sign up today and start earning rewards with every purchase!
+            </p>
+        </section>
+        <section class="info-section-img">
+            <img src="{{ url_for('static', filename='/images/illustration-editor-mobile.svg')}}" alt="Editor mobile" class="mobile">
+            <img src="{{ url_for('static', filename='/images/illustration-editor-desktop.svg')}}" alt="Editor mobile" class="desktop">
+        </section>
+    </section>
+
+    <!-- End of Introducing -->
+
+    <section class="section-2">
+        <img src="{{ url_for('static', filename='/images/bg-pattern-circles.svg')}}" alt="circles" class="circle">
+        <div class="section2-img">
+            <img src="{{ url_for('static', filename='/images/remixphone.svg')}}" id="phone" alt="remixphone">
+        </div>
+        <div class="section2-para">
+            <h3>Integrating the best technology is the backbone of our business.</h3>
+            <p>
+                We're constantly looking for ways to improve our customers' experience, 
+                and that's why we've made it a priority to integrate the latest and greatest
+                 technology into our loyalty program. With cutting-edge features like seamless 
+                 point tracking, personalized rewards, and easy redemption, our loyalty program
+                  is designed to make your shopping experience as convenient and rewarding as possible. 
+                  Plus, with our user-friendly Web app,
+                 you can stay up-to-date on your points balance and rewards, no matter where you are.
+            </p>
+        </div>
+    </section>
+
+    <!-- End of section 2-->
+    <section class="info">        
+        <section class="info-section">
+            <h3>Redeemable Points</h3>
+            <p>
+                Looking for ways to save big on your favorite products?
+                 Look no further than our loyalty program! With redeemable points and huge discounts,
+                 our loyalty program is the ultimate way to get more bang for your buck.
+            </p>
+            <h3 style="margin-top: 15px;">Exclusive Discounts & Sales</h3>
+            <p>
+                As a subscriber to our loyalty program,
+                you'll get access to some of the most exclusive discounts around. 
+                From limited-time promotions to members-only sales,
+                our loyalty program offers the kind of savings that you won't find anywhere else.
+            </p>
+        </section>
+        <section class="info-section-img">
+            <img src="{{ url_for('static', filename='/images/illustration-laptop-mobile.svg')}}" alt="Editor mobile" class="mobile">
+            <img src="{{ url_for('static', filename='/images/illustration-laptop-desktop.svg')}}" alt="Editor mobile" class="desktop">
+        </section>
+    </section>
+
+    <!-- End of Section 3 extends section 1-->
+    <section id="footer">
+        <h1>REMIX</h1>
+        <div>
+            <h3>Brands for less</h3>
+            <p>Power to the People</p>
+            <div class="more_links footer-links">
+            <a href="{{ url_for('register') }}" class="free">Join now</a>
+            <a href="#" aria-disabled="true">learn more</a>
+            </div>
+        </div>      
+    </section>
+
+    
+</body>
+</html>

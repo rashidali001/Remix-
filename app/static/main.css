@@ -1,0 +1,276 @@
+html {
+    scroll-behavior: smooth;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+/** Styling the Intro section **/
+
+div.intro{
+    background-color: #ff8f70 !important;
+    padding: 30px 0;
+    background-image: url('./images/bg-pattern-intro-desktop.svg');
+    background-position:  center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    border-radius: 0 0 0 50px;
+}
+    /* setting the width div */
+div.width{
+    width: 90%;
+    margin: auto;
+}
+    /* setting image width */
+#logo{
+    width: 120px;
+    height: auto;
+}
+    /* setting nav tag */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+    /* Styling the links */
+div.links > a{
+    text-decoration: none;
+    padding: 3px 10px;
+    font-size: 14px;
+}
+#login{
+    margin-right: 5px;
+    color: hsl(0, 0%, 100%);
+}
+#signup{
+    background-color: #fff;
+    color: hsl(353, 100%, 62%);
+    border-radius: 20px;
+    font-weight: 800;
+}
+    /* Styling h1 and p */
+div.width > h1, div.width > p{
+    margin: 15px 0;
+}
+div.width > p{
+    font-size: 13px;
+}
+
+    /* styling the more links section */
+div.more_links > a {
+    text-decoration: none;
+    padding: 4px 12px;
+    font-size: 14px;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 20px;
+    color: hsl(0, 0%, 100%);
+    font-weight: 800;
+}
+.free{
+    margin-right: 10px;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(353, 100%, 62%) !important;
+    font-weight: 800;
+}
+
+@media(min-width:800px) {
+    div.intro{
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+    div.width{
+        width: 80%;
+    }
+    div.width > h1{
+        font-size: 45px;
+    }
+    div.width > p{
+        font-size: 15px;
+    }
+    #logo{
+        width: 150px;
+    }
+}
+@media(min-width:1200px){
+    div.width > h1{
+        font-size: 55px;
+    }
+    div.width > p{
+        font-size: 20px;
+    }
+}
+
+/** title header **/
+h1.title{
+    color: hsl(237, 23%, 32%);
+    text-align: center;
+    margin: 25px auto;
+}
+
+
+/** section (info) **/
+
+section.info{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 90%;
+    margin:0 auto 30px auto;
+    text-align: center;
+}
+section.info-section-img{
+    width: 60%;
+    margin: 25px auto;
+}
+section.info-section-img > img{
+    width: 100%;
+    height: auto;
+}
+
+section.info-section > h1{
+    margin-top: 15px;
+}
+
+section.info-section > p{
+    line-height: 15px;
+    width: 80%;
+    margin: 10px auto;
+}
+
+img.desktop{
+    display: none;
+}
+
+@media (min-width:700px){
+    section.info{
+        flex-direction: row;
+        width: 100%;
+        align-items: stretch;
+        padding-left: 5%;
+        align-items: center;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+    img.mobile{
+        display: none;
+    }
+    img.desktop{
+        display: block;
+    }
+    section.info-section, section.info-section-img{
+        width: 48%;
+        
+    }
+    section.info-section > p{
+        width: 100%;
+    }
+    section.info-section-img{
+        width: 50%;
+        overflow: hidden;
+    }
+    section.info{
+        text-align: left;
+    }
+    h1.title{
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    div.intro > h1{
+        margin: 25px 0;
+    }
+}
+
+/** section-2  style **/
+section.section-2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    color: hsl(0, 0%, 100%);    
+    background-color: hsl(237, 17%, 21%);
+    text-align: center;
+    border-radius: 0 100px 0 100px;
+    padding: 20px;
+}
+div.section2-para, div.section2-img{
+    width: 100%;
+    height: auto;
+}
+img.circle{
+    display: none;
+    position: absolute;
+    top: -150px;
+    left: -50px;
+
+}
+#phone{
+    width: 60%;
+    height: auto;
+}
+div.section2-para > p, div.section2-para > h3{
+    width: 80%;
+    height: auto;
+    margin: 20px auto 0 auto;
+}
+div.section2-para > p{
+    line-height: 15px;
+}
+@media (min-width:700px){
+    section.section-2{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        margin: 30px 0;
+    }
+    div.section2-para, div.section2-img{
+        width: 48%;
+        z-index: 1;
+    }
+    div.section2-para > p, div.section2-para > h3{
+        width: 80%;
+        text-align: left;
+    }
+    img.circle{
+        display: block;
+        width: 500px;
+    }
+    #phone{
+        width: 80%;
+        margin: auto;
+    }
+}
+
+/** Footer **/
+#footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    color: hsl(0, 0%, 100%);    
+    background-color: hsl(237, 17%, 21%);
+    text-align: center;
+    padding: 20px;
+}
+.footer-links{
+    margin: 20px 0 !important;
+}
+#footer > h1{
+    color: #ff8f70;
+    font-size: 70px;
+}
+@media (min-width:700px) {
+    #footer{
+        border-radius: 50px 50px 0 0;
+    }
+    
+}
+

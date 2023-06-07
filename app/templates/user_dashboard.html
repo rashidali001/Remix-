@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMIX BRANDS</title>
+    <!-- Bootstrap link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='user_dashboard.css')}}">
+    
+
+</head>
+<body>
+    <!--Nav-->
+    <nav>
+        <div class="logo">
+            <a href="#">REMIX</a>
+        </div>
+        <div class="links">
+            <a href="">
+                <img src="{{ url_for('static', filename='/images/shopping-cart.png')}}" alt="chart" class="nav-links">
+            </a>
+            <a href="{{ url_for('logout') }}" title="logout">
+                <img src="{{ url_for('static', filename='/images/power-on.png')}}" alt="chart" class="nav-links">
+            </a>
+        </div>
+    </nav>
+    <!---->
+
+    <section class="user">
+        <h1>Hi, {{ current_user.username }}</h1>
+        <p> <span id="points">{{ current_user.points }}</span> | Points </p>
+    </section>
+
+    <h2 style="text-align: center; color: #ff8f70;">Conversion rates</h2>
+
+    <!-- Courasel on small screens -->
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 custom-width" src="{{ url_for('static', filename='/images/conversion rates.svg')}}" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 custom-width" src="{{ url_for('static', filename='/images/converstion rates (1000).svg')}}" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 custom-width" src="{{ url_for('static', filename='/images/converstion rates (5000).svg')}}" alt="Third slide">
+          </div>
+        </div>
+      </div>
+
+      <!-- conversation rates -->
+      <section class="convertion">
+        <div class="convertion-container">
+            <img class="convertion-img" src="{{ url_for('static', filename='/images/conversion rates.svg')}}" alt="first conversion">
+        </div>
+        <div class="convertion-container">
+            <img class="convertion-img" src="{{ url_for('static', filename='/images/converstion rates (1000).svg')}}" alt="second conversion">
+        </div>
+        <div class="convertion-container">
+            <img class="convertion-img" src="{{ url_for('static', filename='/images/converstion rates (5000).svg')}}" alt="third conversion">
+        </div>
+      </section>
+
+      <!-- Catalog -->
+      <h2 style="text-align: center; color: #ff8f70; margin-top: 20px;">View our Catalog</h2>
+
+      <section id="catalog">
+        <div class="catalog-container">
+            <img src="{{ url_for('static', filename='/images/shoes.jpg')}}" alt="shoe wear">
+            <div class="caption-catalog">
+                <a href="#">Shoe wear</a>
+            </div>
+        </div>
+        <div class="catalog-container">
+            <img src="{{ url_for('static', filename='/images/mens.jpg')}}" alt="men waer">
+            <div class="caption-catalog">
+                <a href="#">Men's wear</a>
+            </div>
+        </div>
+        <div class="catalog-container">
+            <img src="{{ url_for('static', filename='/images/womens.jpg')}}" alt="women wear">
+            <div class="caption-catalog">
+                <a href="#">Women's wear</a>
+            </div>
+        </div>
+        <div class="catalog-container">
+            <img src="{{ url_for('static', filename='/images/kids.jpg')}}" alt="kids wear">
+            <div class="caption-catalog">
+                <a href="#">Kid's wear</a>
+            </div>
+        </div>
+        <div class="catalog-container">
+            <img src="{{ url_for('static', filename='/images/watch.jpg')}}" alt="kids wear">
+            <div class="caption-catalog">
+                <a href="#">Watches</a>
+            </div>
+        </div>
+        <div class="catalog-container">
+            <img src="{{ url_for('static', filename='/images/perfume.jpg')}}" alt="kids wear">
+            <div class="caption-catalog">
+                <a href="#">Perfumes</a>
+            </div>
+        </div>
+
+      </section>
+
+    
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='admin.js')}}"></script>
+</body>
+</html>

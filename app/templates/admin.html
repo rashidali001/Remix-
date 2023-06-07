@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remix Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css')}}">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Nav-->
+    <nav>
+        <div class="logo">
+            <a href="#">REMIX</a>
+        </div>
+        <div class="links">
+            <a href="javascript:void(0)" onclick="DisplayForm()">
+                <img src="{{ url_for('static', filename='/images/add.svg')}}" alt="chart" class="nav-links">
+            </a>
+            <a href="{{ url_for('logout') }}" title="logout">
+                <img src="{{ url_for('static', filename='/images/power-on.png')}}" alt="chart" class="nav-links">
+            </a>
+        </div>
+    </nav>
+    <!---->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div id="flashed_messages">
+            {% for message in messages%}
+                <p class="message">{{message}}</p>
+            {% endfor %}
+            <p id="close" onclick="CloseFlashedMessage()" title="Exit"><img src="{{ url_for('static', filename='/images/power-on.png')}}" alt="chart" class="nav-links"></p>
+        </div>
+        {% endif %}
+        {% endwith %}
+    <div class="new_purchase">
+        <h2>{{ current_user.fullname }}</h2>
+        <p id="warning">Note: Every Transaction is recorded and legal actions will be taken into account upon emerging of any malicious activities</p>
+        <form action="" method="post" novalidate id="myform">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.phone_no(class="form-content", placeholder="Phone No...") }}
+            </p>
+            <p>
+                {{ form.price(class="form-content", placeholder="Price...") }}
+            </p>
+            <p>
+                {{ form.points(class="form-content", placeholder="Points...") }}
+            </p>
+            <p>
+                {{ form.pin(class="form-content", placeholder="Pin..") }}
+            </p>
+            <p>
+                {{ form.submit() }}
+            </p>
+        </form>
+        <p id="close" onclick="ClosePurchase()" title="Exit"><img src="{{ url_for('static', filename='/images/power-on.png')}}" alt="chart" class="nav-links"></p>
+    </div>
+
+    <!-- End of new purchase -->
+    <!-- flasgged messages-->
+    <!---->
+
+
+
+    <script src="{{ url_for('static', filename='admin.js')}}" defer></script>
+</body>
+</html>
